@@ -1,0 +1,14 @@
+name: Simple CI
+on:
+push:
+branches: ["main"]
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+-name: Checkout code
+uses: actions/checkout@v3
+-name: Run shell script
+run: bash scripts/sysinfo.shell
+name: Run python file
+run: python hello.py
